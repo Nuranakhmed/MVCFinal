@@ -1,0 +1,21 @@
+﻿
+@model Services
+<h1>Delete</h1>
+
+
+<div>
+    <h2>@Model.Name</h2>
+    <p>@Model.Description</p>
+    
+</div>
+
+<div >
+    <form method="post" asp-action="Delete">
+        <img src="~/img/icons//@Model.Photo" height="100" />
+        <a class="btn btn-primary" asp-action="Index" >Go  back</a>
+        <button type="submit" class="btn btn-danger" asp-route-id="@Model.Id">Delete</button>
+    </form>
+    
+</div>
+
+

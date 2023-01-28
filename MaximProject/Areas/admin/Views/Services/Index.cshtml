@@ -1,0 +1,40 @@
+﻿@using Core.Entities;
+@model IEnumerable<Services>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Slider Table</h4>
+            <a class=" btn btn-success" asp-action="Create">Create</a>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Photo </th>
+                            <th>Name</th>
+                            <th> Description </th>
+                           
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach (var item in Model){
+                        <tr>
+                            <td class="py-1">
+                                <img src="~/img/slider/@item.Photo" width="900" alt="image" />
+                            </td>
+                            <td> @item.Name </td>
+                            <td> @item.Description </td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
+                                <a class="btn btn-warning">Update</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
